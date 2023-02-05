@@ -19,7 +19,7 @@ int main(){
 
    a = b;
 
-   printf("taznim ganduuuu\n\n");
+   printf("hellooooooooo world!!\n\n");
 
    printf("hello world\n\n");
 
