@@ -42,9 +42,9 @@ int main(){
   
   */
   
-  int c;
+int c;
   
-  printf("This program can do some basic mathmatical functions.\nPlease give the correct commands in the correct places to get the optimal answer.\n\n\n");
+printf("This program can do some basic mathmatical functions.\nPlease give the correct commands in the correct places to get the optimal answer.\n\n\n");
   
 int re = 1;
 
@@ -228,9 +228,9 @@ do{
     
     if ( ure == 1){ re =1;}
     
-    else if (ure ==2){ re = 2;}
+    else if (ure == 2){ re = 2;}
     
-    else re =3;
+    else re = 3;
 
  }
  
