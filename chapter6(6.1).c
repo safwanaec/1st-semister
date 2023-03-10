@@ -16,7 +16,7 @@ int main(void)
           n=n/10;
 
     }
-    printf("The digit wise reverse number is: %d",o+n);
+    printf("\n\nThe digit wise reverse number is: %d\n\n",o+n);
 
     return 0;
 }
