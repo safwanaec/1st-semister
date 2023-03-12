@@ -3,7 +3,9 @@ int main(void)
 {
     int p=1000;
     int q=p;
-    float r=0.10, s=0.01;
+    float r,s=0,v;
+
+    printf("\n\n");
 
     for(int a=1; a<=10; a++)
     {
@@ -11,26 +13,34 @@ int main(void)
         p=p+q;
     }
 
-    printf("\n\n");
+    printf("\n");
+
+    for(int a=1; a<=90; a++)
+    {
+        printf("-");
+    }
+
+    printf("\n");
 
     for(int a=1; a<=11; a++)
     {
-        printf("%.2f\t",r);
+        r=0.1+s;
+        s+=0.01;
+        printf("%.2f|\t",r);
         float y=(1+r);
         float x=(1+r);
-        r=r+s;
+        p=1000;
+        q=0;
 
-        for(int n=1; n<=11; n++)
+        for(int n=1; n<=10; n++)
         {
-            //for(int n=1; n<=11; n++)
-            //{
-                x=x*y;
-                float v=p*x;
-                printf("\t%.2f",v);
-            //}
-            //printf("\t%d",n);
+            p=p+q;
+            q=1000;
+            v=p*x;
+            printf("%.0f\t",v);
+            
         }
-        printf("\n\n");
+        printf("\n    |\n");
     }
 
 
