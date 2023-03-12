@@ -1,9 +1,8 @@
 #include<stdio.h> 
- int main(void) 
+ int main(void) 
  {
     printf("This program prints the letter s in a 18x15 grid\n\n"); 
-    int x=18,y=15; 
-    
+    int x=18,y=15; 
     for(int j=1; j<=y; j++)
     {
         for(int i=1; i<=x; i++)
@@ -23,11 +22,8 @@
                     printf("* ");
                 }
             }
-             
         }
-        
         printf("\n");
     }
-    
-    return 0; 
+    return 0; 
  }
