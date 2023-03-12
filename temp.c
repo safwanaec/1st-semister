@@ -1,49 +1,29 @@
-#include<stdio.h>
-int main(void)
-{
-    int p=1000;
-    int q=p;
-    float r,s=0,v;
-
-    printf("\n\n");
-
-    for(int a=1; a<=10; a++)
+#include<stdio.h> 
+ int main(void) 
+ {
+    printf("This program prints the letter s in a 18x15 grid\n\n"); 
+    int x=18,y=15; 
+    for(int j=1; j<=y; j++)
     {
-        printf("\t%d",p);
-        p=p+q;
-    }
-
-    printf("\n");
-
-    for(int a=1; a<=90; a++)
-    {
-        printf("-");
-    }
-
-    printf("\n");
-
-    for(int a=1; a<=11; a++)
-    {
-        r=0.1+s;
-        s+=0.01;
-        printf("%.2f|\t",r);
-        float y=(1+r);
-        float x=(1+r);
-        p=1000;
-        q=0;
-
-        for(int n=1; n<=10; n++)
+        for(int i=1; i<=x; i++)
         {
-            p=p+q;
-            q=1000;
-            v=p*x;
-            printf("%.0f\t",v);
-            
+            if((j>3 && j<7 && i>4) || (j>9 && j<13 && i<15))
+            {
+                printf("  ");
+            }
+            else 
+            {
+                if((j==2 && i>2 && i<17) || (j==3 && i>9 && i<17) || (j==7 && i>5 && i<15) || ((j==8 || j==9) && i>0 && i<15) || (((j==13  && i>4) || (j==14 && i>3) || (j==15 && i>2)) && i<15))
+                {
+                    printf("- ");
+                }
+                 else 
+                {
+                    printf("* ");
+                }
+            }
         }
-        printf("\n    |\n");
+        printf("\n");
     }
-
-
-    printf("\n\n");
-    return 0;
-}
+    return 0; 
+ }
