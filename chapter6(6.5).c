@@ -15,7 +15,7 @@ int main(void)
         {
             y=x*y;
         }
-     printf("\n\n%.3lf  to the power  %d  is  %.3f",x,n,y);
+     printf("\n\n%.1lf  to the power  %d  is  %.3f",x,n,y);
 
     printf("\n\n");
     return 0;
