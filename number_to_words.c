@@ -9,9 +9,9 @@ th();
 hd();
 tn();
 st(); 
-int main(void)
+int main(void)
 {
-    
+    printf("\n\n");
     printf("Please enter any number to get it in words: ");
     scanf("%d",&n);
     printf("\n\n");
@@ -29,19 +29,19 @@ int main(void)
         {
             st(n);
         }
-     else if(n>19 && n<100)
+    else if(n>19 && n<100)
         {
             tn(dg[2]);
             st(dg[1]);
         }
-     else if(n>99 && n<1000)
+    else if(n>99 && n<1000)
         {
             st(dg[3]);
             hd(dg[3]);
             tn(dg[2]);
             st(dg[1]);
         }
-     else if(n>999 && n<10000)
+    else if(n>999 && n<10000)
         {
             st(dg[4]);
             th(dg[4]);
@@ -50,7 +50,7 @@ int main(void)
             tn(dg[2]);
             st(dg[1]);
         }
-     else if(n>9999 && n<100000)
+    else if(n>9999 && n<100000)
         {
             tn(dg[5]);
             st(dg[4]);
@@ -60,7 +60,7 @@ int main(void)
             tn(dg[2]);
             st(dg[1]);
         }
-     else if(n>99999 && n<1000000)
+    else if(n>99999 && n<1000000)
         {
             st(dg[6]);
             hd(dg[6]);
@@ -72,7 +72,7 @@ int main(void)
             tn(dg[2]);
             st(dg[1]);
         }
-     else if(n>999999 && n<10000000)
+    else if(n>999999 && n<10000000)
         {
             st(dg[7]);
             ml(dg[7]);
@@ -86,20 +86,18 @@ int main(void)
             tn(dg[2]);
             st(dg[1]);
         }
+    printf("\n\n");
         
-    return 0; 
+    return 0;
 }
-
 int st(a)
     {
         printf("%s",first[a]);
     }
-    
 int tn(a)
     {
         printf("%s",tenth[a]);
     }
-
 int hd(a)
     { 
         if(a!=0)
@@ -114,7 +112,6 @@ int ml(a)
             printf("million ");
         }
     }
-   
 int th(a)
     {   if(a!=0)
         {
