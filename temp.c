@@ -1,29 +1,120 @@
-#include<stdio.h> 
- int main(void) 
- {
-    printf("This program prints the letter s in a 18x15 grid\n\n"); 
-    int x=18,y=15; 
-    for(int j=1; j<=y; j++)
-    {
-        for(int i=1; i<=x; i++)
+#include<stdio.h>
+
+int n, j=1;
+int dg[10];
+char first[19][15] = {"\0","one ","two ","three ","four ","five ","six ","seven ","eight ","nine ","ten ","eleven ","twelve ","thirteen ","fourteen ","fifteen ","sixteen ","seventeen ","eightteen ","ninteen "};
+char tenth[10][15] = {"\0","ten ","twenty ","thirty ","fourty ","fifty ","sixty ","seventy ","eighty ","ninty "};
+ml();
+th(); 
+hd();
+tn();
+st(); 
+int main(void)
+{
+    printf("\n\n");
+    printf("Please enter any number to get it in words: ");
+    scanf("%d",&n);
+    printf("\n\n");
+    
+    for(int i=1; i<=7; i++)
         {
-            if((j>3 && j<7 && i>4) || (j>9 && j<13 && i<15))
-            {
-                printf("  ");
-            }
-            else 
-            {
-                if((j==2 && i>2 && i<17) || (j==3 && i>9 && i<17) || (j==7 && i>5 && i<15) || ((j==8 || j==9) && i>0 && i<15) || (((j==13  && i>4) || (j==14 && i>3) || (j==15 && i>2)) && i<15))
-                {
-                    printf("- ");
-                }
-                 else 
-                {
-                    printf("* ");
-                }
-            }
+            j = j*10;
+            int k = j/10;
+            
+            dg[i] = n%j;
+            dg[i] = dg[i]/k;
+        }        
+    
+    if(n>0 && n<20)
+        {
+            st(n);
         }
-        printf("\n");
+    else if(n>19 && n<100)
+        {
+            tn(dg[2]);
+            st(dg[1]);
+        }
+    else if(n>99 && n<1000)
+        {
+            st(dg[3]);
+            hd(dg[3]);
+            tn(dg[2]);
+            st(dg[1]);
+        }
+    else if(n>999 && n<10000)
+        {
+            st(dg[4]);
+            th(dg[4]);
+            st(dg[3]);
+            hd(dg[3]);
+            tn(dg[2]);
+            st(dg[1]);
+        }
+    else if(n>9999 && n<100000)
+        {
+            tn(dg[5]);
+            st(dg[4]);
+            th(dg[5]);
+            st(dg[3]);
+            hd(dg[3]);
+            tn(dg[2]);
+            st(dg[1]);
+        }
+    else if(n>99999 && n<1000000)
+        {
+            st(dg[6]);
+            hd(dg[6]);
+            tn(dg[5]);
+            st(dg[4]);
+            th(dg[6]);
+            st(dg[3]);
+            hd(dg[3]);
+            tn(dg[2]);
+            st(dg[1]);
+        }
+    else if(n>999999 && n<10000000)
+        {
+            st(dg[7]);
+            ml(dg[7]);
+            st(dg[6]);
+            hd(dg[6]);
+            tn(dg[5]);
+            st(dg[4]);
+            th(dg[6]);
+            st(dg[3]);
+            hd(dg[3]);
+            tn(dg[2]);
+            st(dg[1]);
+        }
+    printf("\n\n");
+        
+    return 0;
+}
+int st(a)
+    {
+        printf("%s",first[a]);
     }
-    return 0; 
- }
+int tn(a)
+    {
+        printf("%s",tenth[a]);
+    }
+int hd(a)
+    { 
+        if(a!=0)
+        {
+            printf("hundred ");
+        }
+    }
+int ml(a)
+    { 
+        if(a!=0)
+        {
+            printf("million ");
+        }
+    }
+int th(a)
+    {   if(a!=0)
+        {
+            printf("thousand ");
+        }
+    }
