@@ -1,120 +1,60 @@
 #include<stdio.h>
-
-int n, j=1;
-int dg[10];
-char first[19][15] = {"\0","one ","two ","three ","four ","five ","six ","seven ","eight ","nine ","ten ","eleven ","twelve ","thirteen ","fourteen ","fifteen ","sixteen ","seventeen ","eightteen ","ninteen "};
-char tenth[10][15] = {"\0","ten ","twenty ","thirty ","fourty ","fifty ","sixty ","seventy ","eighty ","ninty "};
-ml();
-th(); 
-hd();
-tn();
-st(); 
 int main(void)
-{
-    printf("\n\n");
-    printf("Please enter any number to get it in words: ");
+ {
+    int n,temp,temp2,max,x=0,min,k=0,y=0;
+    printf("How many integers do you want to enter?\n");
     scanf("%d",&n);
-    printf("\n\n");
-    
-    for(int i=1; i<=7; i++)
+    int a[n],b[n];
+
+    printf("\n\nPlease enter %d integers to sort them: \n",n);
+
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d",&a[i]);
+        b[i]=a[i];
+    }
+    for(int i=0; i<n;i++)
         {
-            j = j*10;
-            int k = j/10;
-            
-            dg[i] = n%j;
-            dg[i] = dg[i]/k;
-        }        
-    
-    if(n>0 && n<20)
-        {
-            st(n);
+            if(k<=a[i])
+            {
+                k=a[i];
+            }
         }
-    else if(n>19 && n<100)
+    for(int i=0; i<n; i++)
+    {
+        max=0;
+        for(int j=i; j<n;j++)
         {
-            tn(dg[2]);
-            st(dg[1]);
+            if(max<=a[j])
+            {
+                max=a[j];
+                x=j;
+            }
         }
-    else if(n>99 && n<1000)
+        min=k;
+        for(int j=i; j<n; j++)
         {
-            st(dg[3]);
-            hd(dg[3]);
-            tn(dg[2]);
-            st(dg[1]);
+            if(min>=b[j])
+            {
+                min=b[j];
+                y=j;
+            }
         }
-    else if(n>999 && n<10000)
-        {
-            st(dg[4]);
-            th(dg[4]);
-            st(dg[3]);
-            hd(dg[3]);
-            tn(dg[2]);
-            st(dg[1]);
-        }
-    else if(n>9999 && n<100000)
-        {
-            tn(dg[5]);
-            st(dg[4]);
-            th(dg[5]);
-            st(dg[3]);
-            hd(dg[3]);
-            tn(dg[2]);
-            st(dg[1]);
-        }
-    else if(n>99999 && n<1000000)
-        {
-            st(dg[6]);
-            hd(dg[6]);
-            tn(dg[5]);
-            st(dg[4]);
-            th(dg[6]);
-            st(dg[3]);
-            hd(dg[3]);
-            tn(dg[2]);
-            st(dg[1]);
-        }
-    else if(n>999999 && n<10000000)
-        {
-            st(dg[7]);
-            ml(dg[7]);
-            st(dg[6]);
-            hd(dg[6]);
-            tn(dg[5]);
-            st(dg[4]);
-            th(dg[6]);
-            st(dg[3]);
-            hd(dg[3]);
-            tn(dg[2]);
-            st(dg[1]);
-        }
-    printf("\n\n");
-        
+        temp=a[i];
+        a[i]=a[x];
+        a[x]=temp;
+
+        temp=b[i];
+        b[i]=b[y];
+        b[y]=temp;
+    }
+    printf("\n\n\n");
+
+    printf("smallest to largest\t\tlargest to smallest\n\n");
+    for(int i=0; i<n; i++)
+    {
+        printf("\t%d\t\t\t\t%d\n",b[i],a[i]);
+    }
+
     return 0;
-}
-int st(a)
-    {
-        printf("%s",first[a]);
-    }
-int tn(a)
-    {
-        printf("%s",tenth[a]);
-    }
-int hd(a)
-    { 
-        if(a!=0)
-        {
-            printf("hundred ");
-        }
-    }
-int ml(a)
-    { 
-        if(a!=0)
-        {
-            printf("million ");
-        }
-    }
-int th(a)
-    {   if(a!=0)
-        {
-            printf("thousand ");
-        }
-    }
+ }
