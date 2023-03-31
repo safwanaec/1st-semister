@@ -1,60 +1,33 @@
 #include<stdio.h>
 int main(void)
- {
-    int n,temp,temp2,max,x=0,min,k=0,y=0;
-    printf("How many integers do you want to enter?\n");
+{
+    int i,n,j;
+    unsigned long k=1;
+    //take number from user
+    printf("Please enter the value of n to get n! : ");
     scanf("%d",&n);
-    int a[n],b[n];
-
-    printf("\n\nPlease enter %d integers to sort them: \n",n);
-
-    for(int i=0; i<n; i++)
+    //in a for loop take an integer i from 1 to the value of n
+    //take an integer that has the initial value of 1 and multiply it by i
+    //then assign the multiplied value to j itself
+    for(i=1; i<=n; i++)
     {
-        scanf("%d",&a[i]);
-        b[i]=a[i];
-    }
-    for(int i=0; i<n;i++)
+        printf("%d!  =  ",i);
+        for(j=1; j<=i; j++)
         {
-            if(k<=a[i])
-            {
-                k=a[i];
-            }
+            printf("%d  ",j);
+            if(j<i)
+                {
+                    printf("x  ");
+                }
         }
-    for(int i=0; i<n; i++)
-    {
-        max=0;
-        for(int j=i; j<n;j++)
+        k=k*i;
+        if(k!=1)
         {
-            if(max<=a[j])
-            {
-                max=a[j];
-                x=j;
-            }
+            printf("= %lu",k);
         }
-        min=k;
-        for(int j=i; j<n; j++)
-        {
-            if(min>=b[j])
-            {
-                min=b[j];
-                y=j;
-            }
-        }
-        temp=a[i];
-        a[i]=a[x];
-        a[x]=temp;
-
-        temp=b[i];
-        b[i]=b[y];
-        b[y]=temp;
+        printf("\n\n");
     }
-    printf("\n\n\n");
-
-    printf("smallest to largest\t\tlargest to smallest\n\n");
-    for(int i=0; i<n; i++)
-    {
-        printf("\t%d\t\t\t\t%d\n",b[i],a[i]);
-    }
-
+    //print j
+    printf("\n\n%d! = %lu\n\n",n,k);
     return 0;
- }
+}
