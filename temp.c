@@ -1,33 +1,64 @@
 #include<stdio.h>
-int main(void)
+
+int dayOfTheWeek(int day, int month, int year) 
 {
-    int i,n,j;
-    unsigned long k=1;
-    //take number from user
-    printf("Please enter the value of n to get n! : ");
-    scanf("%d",&n);
-    //in a for loop take an integer i from 1 to the value of n
-    //take an integer that has the initial value of 1 and multiply it by i
-    //then assign the multiplied value to j itself
-    for(i=1; i<=n; i++)
-    {
-        printf("%d!  =  ",i);
-        for(j=1; j<=i; j++)
+    // Write your code here.
+
+    // 1st january 0000 was saturday
+
+    int monthp[13] ={0,31,28,31,30,31,30,31,31,30,31,30,31};
+    int p=0;
+
+    if(year%4==0)
         {
-            printf("%d  ",j);
-            if(j<i)
+            monthp[2]=29;
+        }
+
+    for(int n=month-1; n>=0; n--)
+        {
+            day = day+monthp[n];
+        }
+    
+    for(int n=year; n>0; n--)
+        {
+            if(n%4==0)
                 {
-                    printf("x  ");
+                    day=day+366;
+                }
+            else
+                {
+                    day=day+365;
                 }
         }
-        k=k*i;
-        if(k!=1)
-        {
-            printf("= %lu",k);
-        }
-        printf("\n\n");
+
+    char dayOfWeek[8][]={"\0","saturday","sunday","monday","tuesday","wednesday","thursday","friday"};
+
+    while (day > 7) {
+      day = day - 7;
+      p++;
     }
-    //print j
-    printf("\n\n%d! = %lu\n\n",n,k);
+
+    printf("%s\n\n", dayOfWeek[day]);
+
     return 0;
 }
+
+
+int main()
+{
+
+    int day,month,year,n;
+
+    scanf("%d",&n);
+
+    for(int i=n; i>=0; i--)
+    {
+        scanf("%d %d %d", &day,&month,&year);
+        dayOfTheWeek(day,month,year);
+    }
+    
+
+
+    return 0;
+}
+
